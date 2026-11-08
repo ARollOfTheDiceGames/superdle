@@ -44,6 +44,39 @@
 
     </div>
 	<script>
+		import readline from 'node:readline/promises';
+import { stdin as input, stdout as output } from 'node:process';
+
+const rl = readline.createInterface({ input, output });
+
+const answer = 'superman';
+
+const hints = [
+  'incorrect. Hint 1- one of their powers is super speed.',
+  'incorrect. Hint 2- one of their powers is heat vision.',
+  'incorrect. hint 3- one of their powers is flight.',
+];
+
+let userAnswer = await rl.question('guess the hero');
+
+if (userAnswer === answer) {
+  console.log('wow! great job!');
+} else {
+  let won = false;
+  for (const hint of hints) {
+    userAnswer = await rl.question(hint);
+    if (userAnswer === answer) {
+      console.log('wow! great job!');
+      won = true;
+      break;
+    }
+  }
+  if (!won) {
+    console.log('You lost. The answer was SUPERMAN');
+  }
+}
+
+rl.close();
 		
     </script>
 </body>
