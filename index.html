@@ -10,32 +10,37 @@
         text-align: center;
     }
 </style>
-  <link rel="stylesheet"
-          href="https://pyscript.net/releases/2025.8.1/core.css">
-    <script type="module"
-            src="https://pyscript.net/releases/2025.8.1/core.js">
-    </script>
 </head>
 <body>
-<h1>Superdle</h1>
-<script type="py">   
-user_answer = input("guess the hero")
-if user_answer == "superman":
-    print("wow! great job!")
-else:
-    user_answer2 = input("incorrect. Hint 1- one of their powers is super speed.")
-if user_answer2 == "superman":
-    print("wow! great job!")
-else:
-    user_answer3 = input("incorrect. Hint 2- one of their powers is heat vision.")
-if user_answer3 == "superman":
-    print("wow! great job!")
-else:
-    user_answer4 = input("incorrect. hint 3- one of their powers is flight.")
-if user_answer4 == "superman":
-    print("wow! great job!")
-else:
-    print("You lost. The answer was SUPERMAN")
+    <div class="game">
+
+        <h1>Superdle</h1>
+        <h3>The daily hero game.</h3>
+        <p>Guess the comic book hero based on abilities and powers!</p>
+
+        <form id="quizForm">
+
+            <div class="sequence">
+            guess your hero here!
+            </div>
+
+            <input
+                type="text"
+                id="answer"
+                placeholder="Enter your guess here!"
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit">Submit Answer</button>
+
+            <p id="feedback" class="feedback" aria-live="polite"></p>
+
+        </form>
+
+    </div>
+	<script>
+		
     </script>
 </body>
 </html>
